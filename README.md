@@ -15,7 +15,9 @@ Included is arduino code to accept json structures that provide
 brightness of each red, blue and green between 0-255 and the speed of
 which to fade to that brightness.
 
-## Installation
+## Installation 
+
+#### Server
 
 Right now this requires the use of two separate repositories:
 
@@ -28,6 +30,8 @@ Compile and install the binary
     cd lsrvr-go
     go build lsrvr.go
     sudo cp lsrvr /usr/local/bin/
+
+#### Client
 
 Install the dependencies
 
@@ -57,18 +61,12 @@ For the command line interface:
     Please specify colors by name, json or rgb:
         lctrl [options]
     Options:
-        --server [option]       # Specify the server from the
-configuration file
-        --red    [option]       # Provide a number 0-255, 0 being off
-and 255 being the brightest
-        --green  [option]       # Provide a number 0-255, 0 being off
-and 255 being the brightest
-        --blue   [option]       # Provide a number 0-255, 0 being off
-and 255 being the brightest
-        --color  [option]       # Select between, "red", "blue", "green"
-or "white"
-        --json   [json]         # Supply json directly: {"red": 0,
-"blue": 255, "green", 0}
+        --server [option]       # Specify the server from the configuration file
+        --red    [option]       # Provide a number 0-255, 0 being off and 255 being the brightest
+        --green  [option]       # Provide a number 0-255, 0 being off and 255 being the brightest
+        --blue   [option]       # Provide a number 0-255, 0 being off and 255 being the brightest
+        --color  [option]       # Select between, "red", "blue", "green" or "white"
+        --json   [json]         # Supply json directly: {"red": 0, "blue": 255, "green", 0}
         --random                # Randomly select a color
         --off                   # Turns off the lights
     Example:
@@ -93,9 +91,9 @@ For the server:
 
 ## Roadmap
 
-Continue porting to golang by porting lctrl
+Port the lctrl client to golang.
 
-Be able to write favorite colors to the config file for easy recall
+It would be nice to be able to write favorite colors to the config file easy recall.
 
 Change the arduino software and server software so instead of specifying
 color, specify a pin and a value. Each pin can be :qualitative, which is
@@ -103,9 +101,11 @@ a range from 0-255 or quantitative, which is 0 or 1. Pins can should be able to 
 through a configuration file for ease of use:
 
     arduino:
-      pin1:
-        pin_type: :qualitative
-        pin_name: "red"
+      pin_count: 17
+      pins:
+        pin1:
+          pin_type: :qualitative
+          pin_name: "red"
 
-This will allow for the system to be incredibly flexible and usabl for a
+This will allow for the system to be incredibly flexible and usable for a
 variety of projects and not simply lights.
