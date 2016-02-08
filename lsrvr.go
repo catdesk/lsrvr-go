@@ -54,7 +54,7 @@ func main() {
 		log.Println("          --port  [option]   # Provide a port, if none default port (8783) will be used\n")
 		log.Println("          --debug [option]   # Debug mode, if none default value (false) will be used\n")
 		log.Println("      Example:")
-		log.Println("          lsrvr --port=8080\n\n")
+		log.Println("          lsrvr --host 10.0.0.5 --port 8080\n\n")
 		os.Exit(0)
 	}
 	if *debug == false {

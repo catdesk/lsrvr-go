@@ -86,7 +86,7 @@ For the server:
           --debug [option]   # Debug mode, if none default value (false) will be used
 
       Example:
-          lsrvr --port=8080
+          lsrvr --port 8080
 
 
 ## Roadmap
