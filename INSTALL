@@ -1,0 +1,2 @@
+go build lsrvr.go
+sudo cp lsrvr /usr/local/bin/lsrvr
