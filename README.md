@@ -75,22 +75,17 @@ or "white"
         lctrl --green 255 --blue 24
         lctrl -g 255 -b 24
 
-For the server interface
+For the server:
 
     ## Light Server
       Usage:
       Please specify the server defined in the configuration to start:
           lsrvr [options]
       Options:
-          --name  [option]   # Provide a name, if none default name
-(wall) will be used
-          --host  [option]   # Provide a interface, if none default
-interface (0.0.0.0) will be used
-          --port  [option]   # Provide a port, if none default port
-(8783) will be used
-
-          --debug [option]   # Debug mode, if none default value (false)
-will be used
+          --name  [option]   # Provide a name, if none default name (wall) will be used
+          --host  [option]   # Provide a interface, if none default interface (0.0.0.0) will be used
+          --port  [option]   # Provide a port, if none default port (8783) will be used
+          --debug [option]   # Debug mode, if none default value (false) will be used
 
       Example:
           lsrvr --port=8080
